@@ -33,6 +33,7 @@
 
 // Properties
 @property (nonatomic) BOOL displayActionButton;
+@property (nonatomic, readonly) NSUInteger currentPageIndex;
 
 // Init
 - (id)initWithPhotos:(NSArray *)photosArray  __attribute__((deprecated)); // Depreciated
@@ -43,6 +44,9 @@
 
 // Set page that photo browser starts on
 - (void)setInitialPageIndex:(NSUInteger)index;
+
+// Override this to perform custom layout in subclasses.
+- (void)performCutomLayout; 
 
 @end
 

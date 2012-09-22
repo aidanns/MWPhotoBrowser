@@ -139,6 +139,7 @@ navigationBarBackgroundImageLandscapePhone = _navigationBarBackgroundImageLandsc
 @synthesize displayActionButton = _displayActionButton, actionsSheet = _actionsSheet;
 @synthesize progressHUD = _progressHUD;
 @synthesize previousViewControllerBackButton = _previousViewControllerBackButton;
+@synthesize currentPageIndex = _currentPageIndex;
 
 #pragma mark - NSObject
 
@@ -329,8 +330,16 @@ navigationBarBackgroundImageLandscapePhone = _navigationBarBackgroundImageLandsc
     // Content offset
 	_pagingScrollView.contentOffset = [self contentOffsetForPageAtIndex:_currentPageIndex];
     [self tilePages];
+
+    [self performCustomLayout];
+
     _performingLayout = NO;
     
+}
+
+// Override this to perform custom layout in subclasses.
+- (void)performCustomLayout {
+    return;
 }
 
 // Release any retained subviews of the main view.

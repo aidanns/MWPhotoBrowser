@@ -46,7 +46,7 @@
 - (void)setInitialPageIndex:(NSUInteger)index;
 
 // Override this to perform custom layout in subclasses.
-- (void)performCutomLayout; 
+- (void)performCustomLayout;
 
 @end
 

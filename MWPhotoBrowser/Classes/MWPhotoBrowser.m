@@ -779,7 +779,8 @@ navigationBarBackgroundImageLandscapePhone = _navigationBarBackgroundImageLandsc
         // photo loaded so load ajacent now
         [self loadAdjacentPhotosIfNecessary:currentPhoto];
     }
-    
+
+    [_delegate photoBrowser:self didStartViewingPageAtIndex:index];
 }
 
 #pragma mark - Frame Calculations
